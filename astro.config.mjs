@@ -24,6 +24,10 @@ export default defineConfig({
                 src: path.join(iconsDistFolder, '/svg/*.svg'),
                 dest: 'docs/icons',
               },
+              {
+                src: path.join(iconsDistFolder, '/svg/*.svg'),
+                dest: 'public/icons',
+              },
             ],
           }),
         ],
