@@ -1,6 +1,5 @@
 /* Header Component Styles */
 
-/* Main Header Container */
 mdc-appheader.asjr-header {
   position: fixed;
   left: 0;
@@ -9,11 +8,31 @@ mdc-appheader.asjr-header {
   height: 5rem;
 }
 
-/* Override mdc-appheader parts */
 mdc-appheader.asjr-header::part(container) {
-  padding: 0 8rem;
   height: 100%;
   gap: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+/* Tablet padding */
+@media (min-width: 768px) {
+  mdc-appheader.asjr-header::part(container) {
+    padding: 0 2rem;
+  }
+}
+
+/* Desktop padding */
+@media (min-width: 1024px) {
+  mdc-appheader.asjr-header::part(container) {
+    padding: 0 4rem;
+  }
+}
+
+/* Large desktop padding */
+@media (min-width: 1440px) {
+  mdc-appheader.asjr-header::part(container) {
+    padding: 0 8rem;
+  }
 }
 
 mdc-appheader.asjr-header::part(trailing-section) {
@@ -27,8 +46,8 @@ mdc-appheader.asjr-header::part(trailing-section) {
 }
 
 .logo-placeholder {
-  width: 6.5625rem; /* 105px */
-  height: 1.875rem; /* 30px */
+  width: 6.5625rem;
+  height: 1.875rem;
   background-color: #d1d5db;
   border-radius: 4px;
 }
@@ -152,10 +171,6 @@ mdc-button.mobile-nav-close::part(button) {
 }
 
 @media (max-width: 1023px) {
-  mdc-appheader.asjr-header::part(container) {
-    padding: 0 1.5rem;
-  }
-  
   .header-nav-desktop {
     display: none;
   }

@@ -1,0 +1,92 @@
+/* GetInvolvedForm.css */
+
+.get-involved-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-title::part(text) {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.3;
+}
+
+.form-subtitle::part(text) {
+  font-size: 1.5rem;
+  line-height: 1.33;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: fit-content;
+}
+
+.action-item {
+  width: fit-content;
+}
+
+.action-item::part(button) {
+  display: flex;
+  align-items: center;
+  gap: 0.6875rem;
+}
+
+.newsletter-form {
+  width: 100%;
+}
+
+.newsletter-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form-row mdc-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.newsletter-form mdc-button {
+  align-self: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .newsletter-form mdc-button {
+    width: 100%;
+  }
+}
