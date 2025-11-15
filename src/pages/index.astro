@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GetInvolvedForm from '../components/shared/Form/GetInvolvedForm.astro';
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -13,137 +14,115 @@ const baseUrl = import.meta.env.BASE_URL;
   import '@momentum-design/components/dist/components/text/index.js';
 </script>
 
-<Layout title="Advocates for Social Justice Reform">
-  <mdc-banner class="banner">
-    <mdc-text type="body-large-regular" slot="content"
-      >Are you arrested or detained?</mdc-text
-    >
-    <mdc-button slot="content" inverted> Seek help →</mdc-button>
+<Layout title='Advocates for Social Justice Reform'>
+  <mdc-banner class='banner'>
+    <mdc-text type='body-large-regular' slot='content'>Are you arrested or detained?</mdc-text>
+    <mdc-button slot='content' inverted> Seek help →</mdc-button>
   </mdc-banner>
-  <div class="page-container">
-    <div class="hero-container">
+  <div class='page-container'>
+    <div class='hero-container'>
       <!-- Hero Section -->
-      <section class="hero">
-        <mdc-text type="heading-xlarge-bold" tagname="h1">
+      <section class='hero'>
+        <mdc-text type='heading-xlarge-bold' tagname='h1'>
           Justice with Compassion.<br />Support at Every Step.
         </mdc-text>
-        <mdc-text type="body-large-regular" tagname="p" class="hero-subtext">
-          We advocate for a fairer legal system, ensuring that every individual
-          receives compassionate and competent support throughout the criminal
-          legal process.
+        <mdc-text type='body-large-regular' tagname='p' class='hero-subtext'>
+          We advocate for a fairer legal system, ensuring that every individual receives
+          compassionate and competent support throughout the criminal legal process.
         </mdc-text>
-        <mdc-button size="40">Learn more →</mdc-button>
+        <mdc-button size='40'>Learn more →</mdc-button>
       </section>
 
       <!-- Hero Image -->
-      <section class="hero-image">
+      <section class='hero-image'>
         <img
           src={`${baseUrl}images/hero/hero-protest.jpg`}
-          alt="Advocates holding signs for social justice"
+          alt='Advocates holding signs for social justice'
         />
       </section>
     </div>
 
     <!-- Who We Are -->
-    <div class="who-we-are-container">
-      <section class="who-we-are">
-        <section class="text-on-left">
-          <mdc-text class="heading-tag" tagname="span">Who we are</mdc-text>
-          <mdc-text
-            class="heading-text"
-            type="heading-large-medium"
-            tagname="h2"
-          >
+    <div class='who-we-are-container'>
+      <section class='who-we-are'>
+        <section class='text-on-left'>
+          <mdc-text class='heading-tag' tagname='span'>Who we are</mdc-text>
+          <mdc-text class='heading-text' type='heading-large-medium' tagname='h2'>
             Together, we're building a fairer and more humane justice system.
           </mdc-text>
-          <mdc-text
-            type="body-large-regular"
-            tagname="p"
-            class="who-description"
-          >
-            Advocates for Social Justice Reform (ASJR) is a volunteer-run
-            coalition dedicated to transforming the criminal legal system in
-            Travis County.
+          <mdc-text type='body-large-regular' tagname='p' class='who-description'>
+            Advocates for Social Justice Reform (ASJR) is a volunteer-run coalition dedicated to
+            transforming the criminal legal system in Travis County.
           </mdc-text>
-          <mdc-text
-            type="body-large-regular"
-            tagname="p"
-            class="who-description"
-          >
-            We work to ensure that every person receives fair representation,
-            compassionate support, and dignity at every step of the process.
+          <mdc-text type='body-large-regular' tagname='p' class='who-description'>
+            We work to ensure that every person receives fair representation, compassionate support,
+            and dignity at every step of the process.
           </mdc-text>
-          <mdc-button size="40">Learn more →</mdc-button>
+          <mdc-button size='40'>Learn more →</mdc-button>
         </section>
-        <section class="image-on-right">
+        <section class='image-on-right'>
           <img
             src={`${baseUrl}images/about/about-1.jpg`}
-            alt="Advocates for Social Justice Reform team members smiling"
+            alt='Advocates for Social Justice Reform team members smiling'
           />
           <img
             src={`${baseUrl}images/about/about-2.jpg`}
-            alt="Advocates for Social Justice Reform team members at a protest"
+            alt='Advocates for Social Justice Reform team members at a protest'
           />
         </section>
       </section>
 
       <!-- Values Section -->
-      <section class="values">
-        <mdc-card card-title="Education">
-          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
-            To educate ourselves and our communities about social justice
-            issues.
+      <section class='values'>
+        <mdc-card card-title='Education'>
+          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+            To educate ourselves and our communities about social justice issues.
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title="Communication">
-          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
-            To educate ourselves and our communities about social justice
-            issues.
+        <mdc-card card-title='Communication'>
+          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+            To educate ourselves and our communities about social justice issues.
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title="Advocacy">
-          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
+        <mdc-card card-title='Advocacy'>
+          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
             To be a voice of change in community forums.
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title="Collaboration">
-          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
-            To listen to and collaborate with stakeholders representing diverse
-            viewpoints.
+        <mdc-card card-title='Collaboration'>
+          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+            To listen to and collaborate with stakeholders representing diverse viewpoints.
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title="Oversight & Evaluate">
-          <mdc-text slot="body" type="body-midsize-regular" tagname="p">
-            To educate ourselves and our communities about social justice
-            issues.
+        <mdc-card card-title='Oversight & Evaluate'>
+          <mdc-text slot='body' type='body-midsize-regular' tagname='p'>
+            To educate ourselves and our communities about social justice issues.
           </mdc-text>
         </mdc-card>
       </section>
     </div>
 
     <!-- Programs Section -->
-    <section class="programs">
-      <div class="programs-inner">
-        <mdc-text type="heading-large-medium" tagname="h2">
+    <section class='programs'>
+      <div class='programs-inner'>
+        <mdc-text type='heading-large-medium' tagname='h2'>
           From court to community, creating lasting change.
         </mdc-text>
-        <div class="program-grid">
+        <div class='program-grid'>
           {
             Array.from({ length: 6 }).map(() => (
               <mdc-card
-                card-title="CAFA (Counsel at First Appearance)"
+                card-title='CAFA (Counsel at First Appearance)'
                 image-src={`${baseUrl}images/what-we-do/cafa.jpg`}
-                image-alt="CAFA"
-                variant="border"
-                orientation="horizontal"
-                class="horizontal-card"
+                image-alt='CAFA'
+                variant='border'
+                orientation='horizontal'
+                class='horizontal-card'
               >
-                <mdc-text slot="body" type="body-small-regular" tagname="p">
+                <mdc-text slot='body' type='body-small-regular' tagname='p'>
                   Legal support at first appearance.
                 </mdc-text>
-                <mdc-button slot="footer-button-secondary">
-                  Learn more →
-                </mdc-button>
+                <mdc-button slot='footer-button-secondary'>Learn more →</mdc-button>
               </mdc-card>
             ))
           }
@@ -152,18 +131,14 @@ const baseUrl = import.meta.env.BASE_URL;
     </section>
 
     <!-- News Section -->
-    <section class="news">
-      <mdc-text type="heading-large-medium" tagname="h2">Latest News</mdc-text>
-      <div class="news-grid">
+    <section class='news'>
+      <mdc-text type='heading-large-medium' tagname='h2'>Latest News</mdc-text>
+      <div class='news-grid'>
         {
           Array.from({ length: 3 }).map(() => (
-            <mdc-card
-              card-title="CAFA (Counsel at First Appearance)"
-              variant="border"
-            >
-              <mdc-text slot="body" type="body-small-regular" tagname="p">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla
-                facilisi.
+            <mdc-card card-title='CAFA (Counsel at First Appearance)' variant='border'>
+              <mdc-text slot='body' type='body-small-regular' tagname='p'>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla facilisi.
               </mdc-text>
             </mdc-card>
           ))
@@ -173,21 +148,8 @@ const baseUrl = import.meta.env.BASE_URL;
     </section>
 
     <!-- Join Us Section -->
-    <section class="join-us">
-      <div class="join-inner">
-        <mdc-text type="heading-large-medium" tagname="h2">
-          Join us in building a more compassionate justice system.
-        </mdc-text>
-        <mdc-text type="body-large-regular" tagname="p">
-          Stay up-to-date on the latest reports and news from ASJR.
-        </mdc-text>
-        <form class="join-form">
-          <mdc-input label="First name" required></mdc-input>
-          <mdc-input label="Last name" required></mdc-input>
-          <mdc-input label="Email address" type="email" required></mdc-input>
-          <mdc-button type="submit" variant="filled">Submit</mdc-button>
-        </form>
-      </div>
+    <section class='join-us'>
+      <GetInvolvedForm />
     </section>
   </div>
 </Layout>
@@ -206,19 +168,13 @@ const baseUrl = import.meta.env.BASE_URL;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(
-      --mds-color-theme-background-accent-normal,
-      rgb(17, 112, 207)
-    );
+    background-color: var(--mds-color-theme-background-accent-normal, rgb(17, 112, 207));
     padding: unset;
     position: fixed;
   }
 
   .banner mdc-text {
-    color: var(
-      --mds-color-theme-inverted-text-primary-normal,
-      rgba(255, 255, 255, 0.95)
-    );
+    color: var(--mds-color-theme-inverted-text-primary-normal, rgba(255, 255, 255, 0.95));
   }
   /* HERO SECTION */
 
@@ -319,10 +275,7 @@ const baseUrl = import.meta.env.BASE_URL;
   /* PROGRAMS */
   .programs {
     background: var(--color-theme-background-accent-normal, rgb(17, 112, 207));
-    color: var(
-      --color-theme-inverted-text-primary-normal,
-      rgba(255, 255, 255, 0.95)
-    );
+    color: var(--color-theme-inverted-text-primary-normal, rgba(255, 255, 255, 0.95));
   }
   .programs-inner {
     max-width: 72rem;
@@ -342,10 +295,7 @@ const baseUrl = import.meta.env.BASE_URL;
   }
 
   mdc-card::part(body) {
-    background-color: var(
-      --mds-color-theme-solid-primary-normal,
-      rgb(255, 255, 255)
-    );
+    background-color: var(--mds-color-theme-solid-primary-normal, rgb(255, 255, 255));
     color: var(--mds-color-theme-text-primary-normal, rgba(0, 0, 0, 0.95));
     text-align: left;
     border-top-right-radius: 0.5rem;
@@ -372,28 +322,6 @@ const baseUrl = import.meta.env.BASE_URL;
     width: 100%;
     background: #f9fafb;
     padding: 7rem 1rem;
-  }
-
-  .join-inner {
-    max-width: 60rem;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .join-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 2.5rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    .join-form {
-      flex-direction: row;
-      gap: 1rem;
-    }
   }
 
   /* GLOBAL TYPOGRAPHY ADJUSTMENTS */
