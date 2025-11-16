@@ -30,43 +30,62 @@ const navItems = [
   { label: 'Get involved', href: `${baseUrl}get-involved` }
 ];
 
+const seekHelpLink = baseUrl + "resources";
+
 ---
 
 <script>
   // Import Momentum icon component
   import '@momentum-design/components/dist/components/icon/index.js';
   import '@momentum-design/components/dist/components/toggle/index.js';
+  import '@momentum-design/components/dist/components/buttonlink/index.js';
 </script>
 
 <header>
-  <nav class="nav-container">
-    <a href={baseUrl} class="nav-logo">
-      <Image src={ASJRLogo} alt="Advocates for Social Justice Reform logo" />
-    </a>
+    <nav class="nav-container">
+      <a href={baseUrl} class="nav-logo">
+        <Image src={ASJRLogo} alt="Advocates for Social Justice Reform logo" />
+      </a>
 
-    <div class="nav-container-right">
-      <div class="nav-localization-toggle">
-      <mdc-toggle name="toggleSpanish" value="false" label="Español"></mdc-toggle>
+      <div class="nav-container-right">
+        <div class="nav-localization-toggle">
+        <mdc-toggle name="toggleSpanish" value="false" label="Español"></mdc-toggle>
+        </div>
+
+        <button class="menu-icon" aria-label="Open menu" aria-expanded="false">
+          <div class="list-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+          <div class="x-icon" style="display: none;">
+          </div>
+        </button>
+                
+        <ul class="nav-menu">
+          {navItems.map((item) => (
+            <li><a href={item.href}><span>{item.label}</span></a></li>
+          ))}
+        </ul>
       </div>
+    </nav>
 
-      <button class="menu-icon" aria-label="Open menu" aria-expanded="false">
-        <div class="list-icon">
-              <span></span>
-              <span></span>
-              <span></span>
+    <div class="section accent">
+      <div class="inner-container seek-help-cta">
+        <div class="content-horizontal">
+          Are you arrested or detained?
+          <mdc-buttonlink
+            size="32"
+            href={seekHelpLink}
+            rel="noopener noreferrer" inverted>
+            Seek help →
+            </mdc-buttonlink>
         </div>
-        <div class="x-icon" style="display: none;">
-        </div>
-      </button>
-              
-      <ul class="nav-menu">
-        {navItems.map((item) => (
-          <li><a href={item.href}><span>{item.label}</span></a></li>
-        ))}
-      </ul>
+      </div>
     </div>
-  </nav>
 </header>
+
+  
 
 <script>
         const menuIcon = document.querySelector('.menu-icon');

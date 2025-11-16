@@ -127,14 +127,43 @@ a:focus-visible {
   overflow-x: hidden;
 }
 
-.asjr-main .section {
+.section {
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
 }
 
-.asjr-main .section .content-container {
+.section.accent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  color: var(--mds-color-theme-inverted-text-primary-normal);
+  background-color: var(--mds-color-theme-background-accent-normal);
+}
+
+.section .inner-container {
   max-width: var(--max-width);
+}
+
+/* Common Layouts */
+.content-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 16px;
+}
+
+.content-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 16px;
 }
 
 .main-content {

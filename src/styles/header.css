@@ -1,11 +1,16 @@
 header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
     position: fixed;
     z-index: 1000;
     width: 100%;
+}
+
+.asjr-cta-banner .inner-container {
+    padding: 16px;
 }
 
 .nav-container {
@@ -46,6 +51,7 @@ header {
     display: flex;
     list-style: none;
     gap: 4px;
+    padding-left: 24px;
 }
 
 .nav-menu li {
@@ -133,6 +139,11 @@ header {
 
 .x-icon::after {
     transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.seek-help-cta {
+    font-weight: var(--mds-font-weight-medium);
+    padding: 16px 24px;
 }
 
 /* Mobile styles */
