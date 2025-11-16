@@ -131,4 +131,20 @@ const seekHelpLink = baseUrl + "resources";
                 menuIcon.setAttribute('aria-label', 'Open menu');
             });
         });
+
+        // Close menu on browser resize
+        window.addEventListener('resize', () => {
+            const isExpanded = menuIcon.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+                menuIcon.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.remove('active');
+                navMenu.classList.remove('active');
+                navMenu.style.display = '';
+                
+                // Reset to list icon
+                listIcon.style.display = 'flex';
+                xIcon.style.display = 'none';
+                menuIcon.setAttribute('aria-label', 'Open menu');
+            }
+        });
 </script>
