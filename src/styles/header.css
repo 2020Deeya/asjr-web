@@ -3,14 +3,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: var(--mds-color-theme-background-solid-primary-normal);
     position: fixed;
     z-index: 1000;
     width: 100%;
-}
-
-.asjr-cta-banner .inner-container {
-    padding: 16px;
 }
 
 .nav-container {
@@ -19,8 +15,7 @@ header {
     align-items: center;
     max-width: var(--max-width);
     height: 80px;
-    width: 100%;
-    padding: 0 var(--content-padding);
+    width: 95%;
 }
 
 .nav-container-right {
@@ -142,8 +137,17 @@ header {
 }
 
 .seek-help-cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     font-weight: var(--mds-font-weight-medium);
     padding: 16px 24px;
+    width: 100%;
+}
+
+.seek-help-cta .content-horizontal {
+    justify-content: center;
 }
 
 /* Mobile styles */
@@ -179,7 +183,7 @@ header {
         top: 64px;
         z-index: 1001;
         
-        background-color: white;
+        background-color: var(--mds-color-theme-background-solid-primary-normal);
         
         text-align: center;
         transition: right 0.3s ease;
