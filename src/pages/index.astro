@@ -7,8 +7,8 @@ const baseUrl = import.meta.env.BASE_URL;
 
 // Detect language from URL path
 const currentPath = Astro.url.pathname;
-const relativePath = currentPath.startsWith(baseUrl) 
-  ? currentPath.slice(baseUrl.length) 
+const relativePath = currentPath.startsWith(baseUrl)
+  ? currentPath.slice(baseUrl.length)
   : currentPath;
 const isSpanish = relativePath.startsWith('es/') || relativePath === 'es';
 const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
@@ -23,84 +23,103 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
   import '@momentum-design/components/dist/components/text/index.js';
 </script>
 
-<Layout title={lang === 'es' ? 'Defensores de la Reforma de Justicia Social' : 'Advocates for Social Justice Reform'} lang={lang}>
-  <mdc-banner class='banner'>
-    <mdc-text type='body-large-regular' slot='content'>{t(lang, 'banner.question')}</mdc-text>
-    <mdc-button slot='content' inverted>{t(lang, 'banner.cta')}</mdc-button>
+<Layout title={t(lang, 'main.title')} lang={lang}>
+  <mdc-banner class="banner">
+    <mdc-text type="body-large-regular" slot="content"
+      >{t(lang, 'banner.question')}</mdc-text
+    >
+    <mdc-button slot="content" inverted>{t(lang, 'banner.cta')}</mdc-button>
   </mdc-banner>
-  <div class='page-container'>
-    <div class='hero-container'>
+  <div class="page-container">
+    <div class="hero-container">
       <!-- Hero Section -->
-      <section class='hero'>
-        <mdc-text type='heading-xlarge-bold' tagname='h1' set:html={t(lang, 'hero.title')}>
-        </mdc-text>
-        <mdc-text type='body-large-regular' tagname='p' class='hero-subtext'>
+      <section class="hero">
+        <mdc-text
+          type="heading-xlarge-bold"
+          tagname="h1"
+          set:html={t(lang, 'hero.title')}
+        />
+        <mdc-text type="body-large-regular" tagname="p" class="hero-subtext">
           {t(lang, 'hero.subtitle')}
         </mdc-text>
-        <mdc-button size='40'>{t(lang, 'hero.cta')}</mdc-button>
+        <mdc-button size="40">{t(lang, 'hero.cta')}</mdc-button>
       </section>
 
       <!-- Hero Image -->
-      <section class='hero-image'>
+      <section class="hero-image">
         <img
           src={`${baseUrl}images/hero/hero-protest.jpg`}
-          alt='Advocates holding signs for social justice'
+          alt={t(lang, 'hero.imageAlt')}
         />
       </section>
     </div>
 
     <!-- Who We Are -->
-    <div class='who-we-are-container'>
-      <section class='who-we-are'>
-        <section class='text-on-left'>
-          <mdc-text class='heading-tag' tagname='span'>{t(lang, 'whoWeAre.tag')}</mdc-text>
-          <mdc-text class='heading-text' type='heading-large-medium' tagname='h2'>
+    <div class="who-we-are-container">
+      <section class="who-we-are">
+        <section class="text-on-left">
+          <mdc-text class="heading-tag" tagname="span"
+            >{t(lang, 'whoWeAre.tag')}</mdc-text
+          >
+          <mdc-text
+            class="heading-text"
+            type="heading-large-medium"
+            tagname="h2"
+          >
             {t(lang, 'whoWeAre.heading')}
           </mdc-text>
-          <mdc-text type='body-large-regular' tagname='p' class='who-description'>
+          <mdc-text
+            type="body-large-regular"
+            tagname="p"
+            class="who-description"
+          >
             {t(lang, 'whoWeAre.description1')}
           </mdc-text>
-          <mdc-text type='body-large-regular' tagname='p' class='who-description'>
+          <mdc-text
+            type="body-large-regular"
+            tagname="p"
+            class="who-description"
+          >
             {t(lang, 'whoWeAre.description2')}
           </mdc-text>
-          <mdc-button size='40'>{t(lang, 'whoWeAre.cta')}</mdc-button>
+          <mdc-button size="40">{t(lang, 'whoWeAre.cta')}</mdc-button>
         </section>
-        <section class='image-on-right'>
+        <section class="image-on-right">
           <img
             src={`${baseUrl}images/about/about-1.jpg`}
-            alt='Advocates for Social Justice Reform team members smiling'
+            alt={t(lang, 'whoWeAre.imageAlt1')}
           />
           <img
             src={`${baseUrl}images/about/about-2.jpg`}
-            alt='Advocates for Social Justice Reform team members at a protest'
+            alt={t(lang, 'whoWeAre.imageAlt2')}
           />
         </section>
       </section>
 
       <!-- Values Section -->
-      <section class='values'>
+      <section class="values">
         <mdc-card card-title={t(lang, 'values.education.title')}>
-          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
             {t(lang, 'values.education.description')}
           </mdc-text>
         </mdc-card>
         <mdc-card card-title={t(lang, 'values.communication.title')}>
-          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
             {t(lang, 'values.communication.description')}
           </mdc-text>
         </mdc-card>
         <mdc-card card-title={t(lang, 'values.advocacy.title')}>
-          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
             {t(lang, 'values.advocacy.description')}
           </mdc-text>
         </mdc-card>
         <mdc-card card-title={t(lang, 'values.collaboration.title')}>
-          <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
+          <mdc-text slot="body" type="body-midsize-regular" tagname="span">
             {t(lang, 'values.collaboration.description')}
           </mdc-text>
         </mdc-card>
         <mdc-card card-title={t(lang, 'values.oversight.title')}>
-          <mdc-text slot='body' type='body-midsize-regular' tagname='p'>
+          <mdc-text slot="body" type="body-midsize-regular" tagname="p">
             {t(lang, 'values.oversight.description')}
           </mdc-text>
         </mdc-card>
@@ -108,26 +127,28 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
     </div>
 
     <!-- Programs Section -->
-    <section class='programs'>
-      <div class='programs-inner'>
-        <mdc-text type='heading-large-medium' tagname='h2'>
+    <section class="programs">
+      <div class="programs-inner">
+        <mdc-text type="heading-large-medium" tagname="h2">
           {t(lang, 'programs.heading')}
         </mdc-text>
-        <div class='program-grid'>
+        <div class="program-grid">
           {
             Array.from({ length: 6 }).map(() => (
               <mdc-card
                 card-title={t(lang, 'programs.cafa.title')}
                 image-src={`${baseUrl}images/what-we-do/cafa.jpg`}
-                image-alt='CAFA'
-                variant='border'
-                orientation='horizontal'
-                class='horizontal-card'
+                image-alt="CAFA"
+                variant="border"
+                orientation="horizontal"
+                class="horizontal-card"
               >
-                <mdc-text slot='body' type='body-small-regular' tagname='p'>
+                <mdc-text slot="body" type="body-small-regular" tagname="p">
                   {t(lang, 'programs.cafa.description')}
                 </mdc-text>
-                <mdc-button slot='footer-button-secondary'>{t(lang, 'programs.cafa.cta')}</mdc-button>
+                <mdc-button slot="footer-button-secondary">
+                  {t(lang, 'programs.cafa.cta')}
+                </mdc-button>
               </mdc-card>
             ))
           }
@@ -136,13 +157,18 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
     </section>
 
     <!-- News Section -->
-    <section class='news'>
-      <mdc-text type='heading-large-medium' tagname='h2'>{t(lang, 'news.heading')}</mdc-text>
-      <div class='news-grid'>
+    <section class="news">
+      <mdc-text type="heading-large-medium" tagname="h2"
+        >{t(lang, 'news.heading')}</mdc-text
+      >
+      <div class="news-grid">
         {
           Array.from({ length: 3 }).map(() => (
-            <mdc-card card-title={t(lang, 'news.placeholder.title')} variant='border'>
-              <mdc-text slot='body' type='body-small-regular' tagname='p'>
+            <mdc-card
+              card-title={t(lang, 'news.placeholder.title')}
+              variant="border"
+            >
+              <mdc-text slot="body" type="body-small-regular" tagname="p">
                 {t(lang, 'news.placeholder.description')}
               </mdc-text>
             </mdc-card>
@@ -153,7 +179,7 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
     </section>
 
     <!-- Join Us Section -->
-    <section class='join-us'>
+    <section class="join-us">
       <GetInvolvedForm lang={lang} />
     </section>
   </div>
@@ -173,13 +199,19 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--mds-color-theme-background-accent-normal, rgb(17, 112, 207));
+    background-color: var(
+      --mds-color-theme-background-accent-normal,
+      rgb(17, 112, 207)
+    );
     padding: unset;
     position: fixed;
   }
 
   .banner mdc-text {
-    color: var(--mds-color-theme-inverted-text-primary-normal, rgba(255, 255, 255, 0.95));
+    color: var(
+      --mds-color-theme-inverted-text-primary-normal,
+      rgba(255, 255, 255, 0.95)
+    );
   }
   /* HERO SECTION */
 
@@ -280,7 +312,10 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
   /* PROGRAMS */
   .programs {
     background: var(--color-theme-background-accent-normal, rgb(17, 112, 207));
-    color: var(--color-theme-inverted-text-primary-normal, rgba(255, 255, 255, 0.95));
+    color: var(
+      --color-theme-inverted-text-primary-normal,
+      rgba(255, 255, 255, 0.95)
+    );
   }
   .programs-inner {
     max-width: 72rem;
@@ -300,7 +335,10 @@ const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
   }
 
   mdc-card::part(body) {
-    background-color: var(--mds-color-theme-solid-primary-normal, rgb(255, 255, 255));
+    background-color: var(
+      --mds-color-theme-solid-primary-normal,
+      rgb(255, 255, 255)
+    );
     color: var(--mds-color-theme-text-primary-normal, rgba(0, 0, 0, 0.95));
     text-align: left;
     border-top-right-radius: 0.5rem;
