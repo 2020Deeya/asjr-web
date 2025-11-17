@@ -1,21 +1,23 @@
 ---
 // GetInvolvedForm.astro - Newsletter/Get Involved Form Component
 import "./GetInvolvedForm.css";
+import { t } from "../../../i18n/get";
 
 export interface Props {
   class?: string;
+  lang?: 'en' | 'es';
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className = "", lang = 'en' } = Astro.props as Props;
 ---
 
 <div class={`get-involved-form ${className}`}>
   <div class="form-header">
     <mdc-text type="heading-large-bold" tagname="h2" class="form-title">
-      Join us in building a more compassionate justice system.
+      {t(lang,'form.title')}
     </mdc-text>
     <mdc-text type="body-large-regular" tagname="p" class="form-subtitle">
-      Stay up-to-date on the latest reports and news from ASJR.
+      {t(lang,'form.subtitle')}
     </mdc-text>
   </div>
 
@@ -26,7 +28,7 @@ const { class: className = "" } = Astro.props;
       aria-label="Donate to ASJR"
     >
       <mdc-icon name="favorites-bold" size="24" slot="icon"></mdc-icon>
-      <span>Donate</span>
+  <span>{t(lang,'form.donate')}</span>
     </mdc-button>
 
     <mdc-button
@@ -35,7 +37,7 @@ const { class: className = "" } = Astro.props;
       aria-label="Be an advocate"
     >
       <mdc-icon name="speaker-bold" size="24" slot="icon"></mdc-icon>
-      <span>Be an advocate</span>
+  <span>{t(lang,'form.advocate')}</span>
     </mdc-button>
 
     <mdc-button
@@ -44,7 +46,7 @@ const { class: className = "" } = Astro.props;
       aria-label="Sign up for volunteers"
     >
       <mdc-icon name="raise-hand-bold" size="24" slot="icon"></mdc-icon>
-      <span>Sign up for volunteers</span>
+  <span>{t(lang,'form.volunteer')}</span>
     </mdc-button>
   </div>
 
@@ -56,14 +58,14 @@ const { class: className = "" } = Astro.props;
         <mdc-input
           id="first-name"
           name="firstName"
-          label="First name"
+          label={t(lang,'form.firstName')}
           placeholder=""
           required></mdc-input>
 
         <mdc-input
           id="last-name"
           name="lastName"
-          label="Last name"
+          label={t(lang,'form.lastName')}
           placeholder=""
           required></mdc-input>
       </div>
@@ -72,11 +74,11 @@ const { class: className = "" } = Astro.props;
         id="email"
         name="email"
         type="email"
-        label="Email address"
-        placeholder="Your address@email.com"
+  label={t(lang,'form.emailAddress')}
+  placeholder={t(lang,'form.emailPlaceholder')}
         required></mdc-input>
 
-      <mdc-button type="submit" variant="primary"> Submit </mdc-button>
+  <mdc-button type="submit" variant="primary"> {t(lang,'form.submit')} </mdc-button>
     </fieldset>
   </form>
 </div>

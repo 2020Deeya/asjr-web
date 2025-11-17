@@ -1,8 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GetInvolvedForm from '../components/shared/Form/GetInvolvedForm.astro';
+import { t } from '../i18n/get';
 
 const baseUrl = import.meta.env.BASE_URL;
+
+// Detect language from URL path
+const currentPath = Astro.url.pathname;
+const relativePath = currentPath.startsWith(baseUrl) 
+  ? currentPath.slice(baseUrl.length) 
+  : currentPath;
+const isSpanish = relativePath.startsWith('es/') || relativePath === 'es';
+const lang: 'en' | 'es' = isSpanish ? 'es' : 'en';
 ---
 
 <script>
@@ -14,23 +23,21 @@ const baseUrl = import.meta.env.BASE_URL;
   import '@momentum-design/components/dist/components/text/index.js';
 </script>
 
-<Layout title='Advocates for Social Justice Reform'>
+<Layout title={lang === 'es' ? 'Defensores de la Reforma de Justicia Social' : 'Advocates for Social Justice Reform'} lang={lang}>
   <mdc-banner class='banner'>
-    <mdc-text type='body-large-regular' slot='content'>Are you arrested or detained?</mdc-text>
-    <mdc-button slot='content' inverted> Seek help →</mdc-button>
+    <mdc-text type='body-large-regular' slot='content'>{t(lang, 'banner.question')}</mdc-text>
+    <mdc-button slot='content' inverted>{t(lang, 'banner.cta')}</mdc-button>
   </mdc-banner>
   <div class='page-container'>
     <div class='hero-container'>
       <!-- Hero Section -->
       <section class='hero'>
-        <mdc-text type='heading-xlarge-bold' tagname='h1'>
-          Justice with Compassion.<br />Support at Every Step.
+        <mdc-text type='heading-xlarge-bold' tagname='h1' set:html={t(lang, 'hero.title')}>
         </mdc-text>
         <mdc-text type='body-large-regular' tagname='p' class='hero-subtext'>
-          We advocate for a fairer legal system, ensuring that every individual receives
-          compassionate and competent support throughout the criminal legal process.
+          {t(lang, 'hero.subtitle')}
         </mdc-text>
-        <mdc-button size='40'>Learn more →</mdc-button>
+        <mdc-button size='40'>{t(lang, 'hero.cta')}</mdc-button>
       </section>
 
       <!-- Hero Image -->
@@ -46,19 +53,17 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class='who-we-are-container'>
       <section class='who-we-are'>
         <section class='text-on-left'>
-          <mdc-text class='heading-tag' tagname='span'>Who we are</mdc-text>
+          <mdc-text class='heading-tag' tagname='span'>{t(lang, 'whoWeAre.tag')}</mdc-text>
           <mdc-text class='heading-text' type='heading-large-medium' tagname='h2'>
-            Together, we're building a fairer and more humane justice system.
+            {t(lang, 'whoWeAre.heading')}
           </mdc-text>
           <mdc-text type='body-large-regular' tagname='p' class='who-description'>
-            Advocates for Social Justice Reform (ASJR) is a volunteer-run coalition dedicated to
-            transforming the criminal legal system in Travis County.
+            {t(lang, 'whoWeAre.description1')}
           </mdc-text>
           <mdc-text type='body-large-regular' tagname='p' class='who-description'>
-            We work to ensure that every person receives fair representation, compassionate support,
-            and dignity at every step of the process.
+            {t(lang, 'whoWeAre.description2')}
           </mdc-text>
-          <mdc-button size='40'>Learn more →</mdc-button>
+          <mdc-button size='40'>{t(lang, 'whoWeAre.cta')}</mdc-button>
         </section>
         <section class='image-on-right'>
           <img
@@ -74,29 +79,29 @@ const baseUrl = import.meta.env.BASE_URL;
 
       <!-- Values Section -->
       <section class='values'>
-        <mdc-card card-title='Education'>
+        <mdc-card card-title={t(lang, 'values.education.title')}>
           <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
-            To educate ourselves and our communities about social justice issues.
+            {t(lang, 'values.education.description')}
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title='Communication'>
+        <mdc-card card-title={t(lang, 'values.communication.title')}>
           <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
-            To educate ourselves and our communities about social justice issues.
+            {t(lang, 'values.communication.description')}
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title='Advocacy'>
+        <mdc-card card-title={t(lang, 'values.advocacy.title')}>
           <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
-            To be a voice of change in community forums.
+            {t(lang, 'values.advocacy.description')}
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title='Collaboration'>
+        <mdc-card card-title={t(lang, 'values.collaboration.title')}>
           <mdc-text slot='body' type='body-midsize-regular' tagname='span'>
-            To listen to and collaborate with stakeholders representing diverse viewpoints.
+            {t(lang, 'values.collaboration.description')}
           </mdc-text>
         </mdc-card>
-        <mdc-card card-title='Oversight & Evaluate'>
+        <mdc-card card-title={t(lang, 'values.oversight.title')}>
           <mdc-text slot='body' type='body-midsize-regular' tagname='p'>
-            To educate ourselves and our communities about social justice issues.
+            {t(lang, 'values.oversight.description')}
           </mdc-text>
         </mdc-card>
       </section>
@@ -106,13 +111,13 @@ const baseUrl = import.meta.env.BASE_URL;
     <section class='programs'>
       <div class='programs-inner'>
         <mdc-text type='heading-large-medium' tagname='h2'>
-          From court to community, creating lasting change.
+          {t(lang, 'programs.heading')}
         </mdc-text>
         <div class='program-grid'>
           {
             Array.from({ length: 6 }).map(() => (
               <mdc-card
-                card-title='CAFA (Counsel at First Appearance)'
+                card-title={t(lang, 'programs.cafa.title')}
                 image-src={`${baseUrl}images/what-we-do/cafa.jpg`}
                 image-alt='CAFA'
                 variant='border'
@@ -120,9 +125,9 @@ const baseUrl = import.meta.env.BASE_URL;
                 class='horizontal-card'
               >
                 <mdc-text slot='body' type='body-small-regular' tagname='p'>
-                  Legal support at first appearance.
+                  {t(lang, 'programs.cafa.description')}
                 </mdc-text>
-                <mdc-button slot='footer-button-secondary'>Learn more →</mdc-button>
+                <mdc-button slot='footer-button-secondary'>{t(lang, 'programs.cafa.cta')}</mdc-button>
               </mdc-card>
             ))
           }
@@ -132,24 +137,24 @@ const baseUrl = import.meta.env.BASE_URL;
 
     <!-- News Section -->
     <section class='news'>
-      <mdc-text type='heading-large-medium' tagname='h2'>Latest News</mdc-text>
+      <mdc-text type='heading-large-medium' tagname='h2'>{t(lang, 'news.heading')}</mdc-text>
       <div class='news-grid'>
         {
           Array.from({ length: 3 }).map(() => (
-            <mdc-card card-title='CAFA (Counsel at First Appearance)' variant='border'>
+            <mdc-card card-title={t(lang, 'news.placeholder.title')} variant='border'>
               <mdc-text slot='body' type='body-small-regular' tagname='p'>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla facilisi.
+                {t(lang, 'news.placeholder.description')}
               </mdc-text>
             </mdc-card>
           ))
         }
-        <mdc-button>See more →</mdc-button>
+        <mdc-button>{t(lang, 'news.cta')}</mdc-button>
       </div>
     </section>
 
     <!-- Join Us Section -->
     <section class='join-us'>
-      <GetInvolvedForm />
+      <GetInvolvedForm lang={lang} />
     </section>
   </div>
 </Layout>
