@@ -968,7 +968,10 @@ img {
     border-radius: 1rem;
   }
 
-  p {
+  p,
+  .section.about-vision .section-text p,
+  .section.about-mission .section-text p,
+  .section.about-goals .goals-description {
     font-size: 1rem;
   }
 
@@ -976,7 +979,10 @@ img {
     padding-bottom: 0;
   }
 
-  .section .inner-container {
+  .section .inner-container,
+  .section.about-vision,
+  .section.about-mission,
+  .section.about-goals  {
     padding: 1.5rem 0;
   }
 
